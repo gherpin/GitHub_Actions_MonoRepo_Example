@@ -1,0 +1,9 @@
+name: 'Deploying Project 1'
+description: 'This action deploys project 1'
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo Deploying Project 1
+      shell: bash
+    

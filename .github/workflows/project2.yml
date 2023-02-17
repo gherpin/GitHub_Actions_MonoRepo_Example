@@ -1,0 +1,35 @@
+name: Project 2
+
+on:
+
+# Triggers the workflow on push or pull request events but only for the main branch
+  #push:
+    #branches: [ main ]
+  #pull_request:
+   # branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+   #inputs:
+      # branch-tag-sha:
+      #   description: The branch, tag or sha of the terraform that should be deployed to the Dev subscription.
+      #   required: true
+      # first_name:
+      #   description: first name of person to say hello to.
+      #   required: true
+
+jobs:
+
+  say_hello:
+    name: Say hello
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Run Project Two
+        uses: ./src/project2/actions/ci
+      - name: Run Deploy
+        uses: ./src/project2/actions/deploy
+      
+
